@@ -1,0 +1,26 @@
+body{
+    background: skyblue; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    color: #fff; padding: 30px;
+}
+h1{
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+p{
+    font-size: 16px;
+    text-align: center;
+}
+label, input {
+    display: block;
+    padding: 2px;
+}
+.lab {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.subbut {
+    margin-top: 15px;
+}

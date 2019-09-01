@@ -1,0 +1,137 @@
+body{
+    background: rgb(158, 222, 245); 
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    color: rgb(124, 102, 102);
+}
+.outerDiv {
+    padding: 30px;
+}
+p{
+    font-size: 15px;
+    padding-left: 20px; 
+}
+h2 {
+    display: inline;
+    color: #fff;
+    padding: 30px;
+}
+.cretePost, .btnEdit, .btnDelete, .subm, .cancel, .comBtnEdit, .comBtnDelete, .btnCreateCom  {
+    float: right;
+    font-size: 15px;
+    color: whitesmoke;
+    font-weight: bold;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background:	rgb(116, 231, 0);
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #34c1e5;
+    margin-right: 20px;
+}
+.btnEdit, .btnDelete, .btnCreateCom{
+    background:	rgb(139, 168, 247);
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+label, input {
+    display: block;
+    padding: 2px;
+}
+.lab {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.subbut {
+    margin-top: 15px;
+}
+.post{
+    background-color:rgb(255, 255, 255);
+    display: block;
+    min-height: 100px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.post h4 {
+    color: rgb(155, 145, 145);
+    padding: 5px 15px;
+    background: #34c1e5;
+    color: whitesmoke;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.postBody {
+    display: block;
+    word-wrap: break-word;
+}
+
+.btnEdit:active, .btnDelete:active, .cretePost:active{
+    transform: translateY(1px);
+    filter: saturate(150%);
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.formPost, .commentPost {
+    position: fixed;
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 25px;
+    background: rgb(196, 230, 243);
+    border-radius: 10px;
+    display: none;
+}
+.textarea1, .textarea2 {
+    display: block;
+    width: 95%;
+    margin: 10px auto;
+}
+.textarea2 {
+    min-height: 75px;
+}
+.subm, .cancel {
+    margin: 15px;
+}
+.date{
+    float: right;
+    margin: 0;
+}
+.cancel {
+    background: rgb(221, 4, 4);
+}
+.container {
+    display: block;
+    min-height: 35px;
+}
+.comment {
+    margin: 10px;
+    padding: 15px;
+    max-width: 95%;
+    border-radius: 5px;
+    display: block;
+    word-wrap: break-word;
+    -webkit-box-shadow: -1px 2px 5px -1px rgba(110,109,110,1);
+    -moz-box-shadow: -1px 1px 11px -1px rgba(110,109,110,1);
+    box-shadow: -1px 1px 5px -1px rgba(110,109,110,1);
+}
+.comBtnEdit, .comBtnDelete {
+    float: right;
+    margin: 4px;
+    background:	rgb(139, 168, 247);
+    font-size: 12px;
+}
+.timeStamp {
+    float: right;
+}
+.warning {
+    top: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: fixed;
+    color: whitesmoke;
+    background: rgb(247, 60, 60);
+}

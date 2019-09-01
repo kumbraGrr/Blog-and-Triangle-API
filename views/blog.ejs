@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/public/assets/blogStyle.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog</title>
+</head>
+<body>
+    <div class="outerDiv">
+        <h2>Welcome to a most simplified blog ever!</h2>
+        <button class="cretePost" onclick="createForm()">Create a post</button>
+        <% for(let i = 0; i < data.length; i++) {%>
+        <div class="post clearfix" id="<%= data[i].id %>">
+            <h4 class="clearfix"><%= data[i].title %><p class="date">Created : <%= data[i].date.toString().slice(0,25) %></p></h4>
+            <p id="postBody" class="postBody"><%= data[i].body %></p>
+            <div class="container">
+                <!-- Posts -->
+                <button class="btnEdit" value="<%= data[i].id %>" onclick="editPost(this.value)">Edit post</button>
+            
+                <form method="POST" action='/api/delete/'>
+                    <input type = "hidden" type="int" name = 'id' value=<%= data[i].id %>></input>
+                    <button class="btnDelete" type="submit"> Delete post </button>
+                </form>
+
+                <button class="btnCreateCom" type="submit" value="<%= data[i].id %>" onclick="addComment(this.value)"> Comment </button>
+                
+            </div>
+
+            <!-- Comments -->
+            <% if(data[i].comment.length > 0) {%>
+            <p>Comments: </p>
+            <% } %>
+            <% for(let l = 0; l < data[i].comment.length; l++) {%>
+                <div class="comment clearfix">
+                    <p class="timeStamp">Created : <%= data[i].comment[l].date.toString().slice(0,25) %></p>
+                    <p id="bodyComment<%=data[i].comment[l].commentId%>"> <%=data[i].comment[l].commentBody %></p>
+    
+                    <button class="comBtnEdit" value="Comment<%=data[i].comment[l].commentId %>" onclick="editComment(this.value)">Edit comment</button>
+            
+                    <form method="POST" action='/api/deleteComment/'>
+                    <input type = "hidden" type="int" name ='commentId' value=<%= data[i].comment[l].commentId %>></input>
+                    <button class="comBtnDelete" type="submit"> Delete comment </button>
+                </form>
+                </div>
+                
+            <% } %>
+            
+        </div>
+        <% } %>
+    </div>
+    <!-- New post and edits form -->
+    <div id="formPost" class="formPost">
+        <form id="postChange" class="postChange" method="POST">
+                <input id="textarea1"class="textarea1" type="text" placeholder="Title" name="title"></input>
+                <input id="textarea2" class="textarea2" type="text" placeholder="Enter text" name="textBody"></input>
+                <button class="subm" type="submit">Submit</button>
+        </form>
+        <button class="cancel" onclick="cancel()"> Cancel </button>
+    </div>
+    <!-- New comments and edits form -->
+    <div id="commentPost" class="commentPost">
+            <form id="commentChange" class="commentChange" method="POST">
+                    <input id="textArea3" class="textarea2" type="text" placeholder="Enter text" name="textBody"></input>
+                    <button class="subm" type="submit">Submit</button>
+            </form>
+            <button class="cancel" onclick="cancel()"> Cancel </button>
+            
+        </div>
+    <script src="/scripts/main.js"></script>
+</body>
+</html>
