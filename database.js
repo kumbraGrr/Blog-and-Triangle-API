@@ -19,7 +19,7 @@ const dbinfo = {
  );
 
  dbAssignment.connect(function(err) {
-    const dbName = "mock"; //Please insert desired name here
+    const dbName = "DbName"; //Please insert desired name here
     if (err) throw err;
     console.log("Connected!");
 
